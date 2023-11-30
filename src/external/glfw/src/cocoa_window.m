@@ -56,7 +56,7 @@ static void hideCursor(_GLFWwindow* window)
 
 // Shows the cursor if not already shown
 //
-static void showCursor(_GLFWwindow* window)
+static void ShowCursorRaylib(_GLFWwindow* window)
 {
     if (_glfw.ns.cursorHidden)
     {
@@ -71,7 +71,7 @@ static void updateCursorImage(_GLFWwindow* window)
 {
     if (window->cursorMode == GLFW_CURSOR_NORMAL)
     {
-        showCursor(window);
+        ShowCursorRaylib(window);
 
         if (window->cursor)
             [(NSCursor*) window->cursor->ns.object set];
@@ -486,7 +486,7 @@ static const NSRange kEmptyRange = { NSNotFound, 0 };
 - (void)mouseExited:(NSEvent *)event
 {
     if (window->cursorMode == GLFW_CURSOR_HIDDEN)
-        showCursor(window);
+        ShowCursorRaylib(window);
 
     _glfwInputCursorEnter(window, GLFW_FALSE);
 }

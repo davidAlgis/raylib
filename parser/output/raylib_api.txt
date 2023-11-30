@@ -1229,8 +1229,8 @@ Function 048: DisableEventWaiting() (0 input parameters)
   Return type: void
   Description: Disable waiting for events on EndDrawing(), automatic events polling
   No input parameters
-Function 049: ShowCursor() (0 input parameters)
-  Name: ShowCursor
+Function 049: ShowCursorRaylib() (0 input parameters)
+  Name: ShowCursorRaylib
   Return type: void
   Description: Shows cursor
   No input parameters

@@ -795,7 +795,7 @@
         </Function>
         <Function name="DisableEventWaiting" retType="void" paramCount="0" desc="Disable waiting for events on EndDrawing(), automatic events polling">
         </Function>
-        <Function name="ShowCursor" retType="void" paramCount="0" desc="Shows cursor">
+        <Function name="ShowCursorRaylib" retType="void" paramCount="0" desc="Shows cursor">
         </Function>
         <Function name="HideCursor" retType="void" paramCount="0" desc="Hides cursor">
         </Function>

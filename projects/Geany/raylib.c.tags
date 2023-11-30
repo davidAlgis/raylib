@@ -26,7 +26,7 @@ GetMonitorPhysicalHeight|int|(int monitor);|
 GetMonitorName|const char *|(int monitor);|
 GetClipboardText|const char *|(void);|
 SetClipboardText|void|(const char *text);|
-ShowCursor|void|(void);|
+ShowCursorRaylib|void|(void);|
 HideCursor|void|(void);|
 IsCursorHidden|bool|(void);|
 EnableCursor|void|(void);|

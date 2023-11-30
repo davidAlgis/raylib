@@ -3387,7 +3387,7 @@ return {
       returnType = "void"
     },
     {
-      name = "ShowCursor",
+      name = "ShowCursorRaylib",
       description = "Shows cursor",
       returnType = "void"
     },

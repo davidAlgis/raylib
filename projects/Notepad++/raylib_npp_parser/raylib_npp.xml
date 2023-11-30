@@ -198,7 +198,7 @@
         </KeyWord>
 
         <!-- Cursor-related functions -->
-        <KeyWord name="ShowCursor" func="yes">
+        <KeyWord name="ShowCursorRaylib" func="yes">
             <Overload retVal="void" descr="Shows cursor"></Overload>
         </KeyWord>
         <KeyWord name="HideCursor" func="yes">
