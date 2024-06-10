@@ -465,7 +465,7 @@ static void DrawTextCodepoint3D(Font font, int codepoint, Vector3 position, floa
 
     // Character source rectangle from font texture atlas
     // NOTE: We consider chars padding when drawing, it could be required for outline/glow shader effects
-    Rectangle srcRec = { font.recs[index].x - (float)font.glyphPadding, font.recs[index].y - (float)font.glyphPadding,
+    RectangleRaylib srcRec = { font.recs[index].x - (float)font.glyphPadding, font.recs[index].y - (float)font.glyphPadding,
                          font.recs[index].width + 2.0f*font.glyphPadding, font.recs[index].height + 2.0f*font.glyphPadding };
 
     float width = (float)(font.recs[index].width + 2.0f*font.glyphPadding)/(float)font.baseSize*scale;

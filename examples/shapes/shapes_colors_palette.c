@@ -37,7 +37,7 @@ int main(void)
         "DARKBROWN", "GRAY", "RED", "GOLD", "LIME", "BLUE", "VIOLET", "BROWN",
         "LIGHTGRAY", "PINK", "YELLOW", "GREEN", "SKYBLUE", "PURPLE", "BEIGE" };
 
-    Rectangle colorsRecs[MAX_COLORS_COUNT] = { 0 };     // Rectangles array
+    RectangleRaylib colorsRecs[MAX_COLORS_COUNT] = { 0 };     // Rectangles array
 
     // Fills colorsRecs data (for every rectangle)
     for (int i = 0; i < MAX_COLORS_COUNT; i++)

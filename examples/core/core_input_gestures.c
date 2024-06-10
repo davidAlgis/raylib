@@ -28,7 +28,7 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "raylib [core] example - input gestures");
 
     Vector2 touchPosition = { 0, 0 };
-    Rectangle touchArea = { 220, 10, screenWidth - 230.0f, screenHeight - 20.0f };
+    RectangleRaylib touchArea = { 220, 10, screenWidth - 230.0f, screenHeight - 20.0f };
 
     int gesturesCount = 0;
     char gestureStrings[MAX_GESTURE_STRINGS][32];

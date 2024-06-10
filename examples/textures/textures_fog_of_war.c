@@ -129,8 +129,8 @@ int main(void)
 
 
             // Draw fog of war (scaled to full map, bilinear filtering)
-            DrawTexturePro(fogOfWar.texture, (Rectangle){ 0, 0, (float)fogOfWar.texture.width, (float)-fogOfWar.texture.height },
-                           (Rectangle){ 0, 0, (float)map.tilesX*MAP_TILE_SIZE, (float)map.tilesY*MAP_TILE_SIZE },
+            DrawTexturePro(fogOfWar.texture, (RectangleRaylib){ 0, 0, (float)fogOfWar.texture.width, (float)-fogOfWar.texture.height },
+                           (RectangleRaylib){ 0, 0, (float)map.tilesX*MAP_TILE_SIZE, (float)map.tilesY*MAP_TILE_SIZE },
                            (Vector2){ 0, 0 }, 0.0f, WHITE);
 
             // Draw player current tile

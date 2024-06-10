@@ -112,8 +112,8 @@ int main(void)
                 // Draw active particles
                 for (int i = 0; i < MAX_PARTICLES; i++)
                 {
-                    if (mouseTail[i].active) DrawTexturePro(smoke, (Rectangle){ 0.0f, 0.0f, (float)smoke.width, (float)smoke.height },
-                                                           (Rectangle){ mouseTail[i].position.x, mouseTail[i].position.y, smoke.width*mouseTail[i].size, smoke.height*mouseTail[i].size },
+                    if (mouseTail[i].active) DrawTexturePro(smoke, (RectangleRaylib){ 0.0f, 0.0f, (float)smoke.width, (float)smoke.height },
+                                                           (RectangleRaylib){ mouseTail[i].position.x, mouseTail[i].position.y, smoke.width*mouseTail[i].size, smoke.height*mouseTail[i].size },
                                                            (Vector2){ (float)(smoke.width*mouseTail[i].size/2.0f), (float)(smoke.height*mouseTail[i].size/2.0f) }, mouseTail[i].rotation,
                                                            Fade(mouseTail[i].color, mouseTail[i].alpha));
                 }

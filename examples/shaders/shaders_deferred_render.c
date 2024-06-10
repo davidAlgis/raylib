@@ -279,7 +279,7 @@ int main(void)
                         .id = gBuffer.positionTexture,
                         .width = screenWidth,
                         .height = screenHeight,
-                    }, (Rectangle) { 0, 0, screenWidth, -screenHeight }, Vector2Zero(), RAYWHITE);
+                    }, (RectangleRaylib) { 0, 0, screenWidth, -screenHeight }, Vector2Zero(), RAYWHITE);
                     DrawText("POSITION TEXTURE", 10, screenHeight - 30, 20, DARKGREEN);
                 } break;
                 
@@ -289,7 +289,7 @@ int main(void)
                         .id = gBuffer.normalTexture,
                         .width = screenWidth,
                         .height = screenHeight,
-                    }, (Rectangle) { 0, 0, screenWidth, -screenHeight }, Vector2Zero(), RAYWHITE);
+                    }, (RectangleRaylib) { 0, 0, screenWidth, -screenHeight }, Vector2Zero(), RAYWHITE);
                     DrawText("NORMAL TEXTURE", 10, screenHeight - 30, 20, DARKGREEN);
                 } break;
 
@@ -299,7 +299,7 @@ int main(void)
                         .id = gBuffer.albedoSpecTexture,
                         .width = screenWidth,
                         .height = screenHeight,
-                    }, (Rectangle) { 0, 0, screenWidth, -screenHeight }, Vector2Zero(), RAYWHITE);
+                    }, (RectangleRaylib) { 0, 0, screenWidth, -screenHeight }, Vector2Zero(), RAYWHITE);
                     DrawText("ALBEDO TEXTURE", 10, screenHeight - 30, 20, DARKGREEN);
                 } break;
             }

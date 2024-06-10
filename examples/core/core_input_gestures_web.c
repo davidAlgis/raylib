@@ -82,8 +82,8 @@ Color GetGestureColor(int i)
 int logMode = 1; // Log mode values: 0 shows repeated events; 1 hides repeated events; 2 shows repeated events but hide hold events; 3 hides repeated events and hide hold events
 
 Color gestureColor = { 0, 0, 0, 255 };
-Rectangle logButton1 = { 53, 7, 48, 26 };
-Rectangle logButton2 = { 108, 7, 36, 26 };
+RectangleRaylib logButton1 = { 53, 7, 48, 26 };
+RectangleRaylib logButton2 = { 108, 7, 36, 26 };
 Vector2 gestureLogPosition = { 10, 10 };
 
 // Protractor variables definitions

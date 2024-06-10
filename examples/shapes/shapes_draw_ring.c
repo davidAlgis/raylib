@@ -69,17 +69,17 @@ int main(void)
 
             // Draw GUI controls
             //------------------------------------------------------------------------------
-            GuiSliderBar((Rectangle){ 600, 40, 120, 20 }, "StartAngle", NULL, &startAngle, -450, 450);
-            GuiSliderBar((Rectangle){ 600, 70, 120, 20 }, "EndAngle", NULL, &endAngle, -450, 450);
+            GuiSliderBar((RectangleRaylib){ 600, 40, 120, 20 }, "StartAngle", NULL, &startAngle, -450, 450);
+            GuiSliderBar((RectangleRaylib){ 600, 70, 120, 20 }, "EndAngle", NULL, &endAngle, -450, 450);
 
-            GuiSliderBar((Rectangle){ 600, 140, 120, 20 }, "InnerRadius", NULL, &innerRadius, 0, 100);
-            GuiSliderBar((Rectangle){ 600, 170, 120, 20 }, "OuterRadius", NULL, &outerRadius, 0, 200);
+            GuiSliderBar((RectangleRaylib){ 600, 140, 120, 20 }, "InnerRadius", NULL, &innerRadius, 0, 100);
+            GuiSliderBar((RectangleRaylib){ 600, 170, 120, 20 }, "OuterRadius", NULL, &outerRadius, 0, 200);
 
-            GuiSliderBar((Rectangle){ 600, 240, 120, 20 }, "Segments", NULL, &segments, 0, 100);
+            GuiSliderBar((RectangleRaylib){ 600, 240, 120, 20 }, "Segments", NULL, &segments, 0, 100);
 
-            GuiCheckBox((Rectangle){ 600, 320, 20, 20 }, "Draw Ring", &drawRing);
-            GuiCheckBox((Rectangle){ 600, 350, 20, 20 }, "Draw RingLines", &drawRingLines);
-            GuiCheckBox((Rectangle){ 600, 380, 20, 20 }, "Draw CircleLines", &drawCircleLines);
+            GuiCheckBox((RectangleRaylib){ 600, 320, 20, 20 }, "Draw Ring", &drawRing);
+            GuiCheckBox((RectangleRaylib){ 600, 350, 20, 20 }, "Draw RingLines", &drawRingLines);
+            GuiCheckBox((RectangleRaylib){ 600, 380, 20, 20 }, "Draw CircleLines", &drawCircleLines);
             //------------------------------------------------------------------------------
 
             int minSegments = (int)ceilf((endAngle - startAngle)/90);

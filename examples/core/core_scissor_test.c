@@ -27,7 +27,7 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - scissor test");
 
-    Rectangle scissorArea = { 0, 0, 300, 300 };
+    RectangleRaylib scissorArea = { 0, 0, 300, 300 };
     bool scissorMode = true;
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second

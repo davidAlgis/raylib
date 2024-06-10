@@ -36,7 +36,7 @@ int main(void)
         LIGHTGRAY, GRAY, DARKGRAY, BLACK };
 
     // Define colorsRecs data (for every rectangle)
-    Rectangle colorsRecs[MAX_COLORS_COUNT] = { 0 };
+    RectangleRaylib colorsRecs[MAX_COLORS_COUNT] = { 0 };
 
     for (int i = 0; i < MAX_COLORS_COUNT; i++)
     {
@@ -52,7 +52,7 @@ int main(void)
     float brushSize = 20.0f;
     bool mouseWasPressed = false;
 
-    Rectangle btnSaveRec = { 750, 10, 40, 30 };
+    RectangleRaylib btnSaveRec = { 750, 10, 40, 30 };
     bool btnSaveMouseHover = false;
     bool showSaveMessage = false;
     int saveMessageCounter = 0;
@@ -177,7 +177,7 @@ int main(void)
         ClearBackground(RAYWHITE);
 
         // NOTE: Render texture must be y-flipped due to default OpenGL coordinates (left-bottom)
-        DrawTextureRec(target.texture, (Rectangle) { 0, 0, (float)target.texture.width, (float)-target.texture.height }, (Vector2) { 0, 0 }, WHITE);
+        DrawTextureRec(target.texture, (RectangleRaylib) { 0, 0, (float)target.texture.width, (float)-target.texture.height }, (Vector2) { 0, 0 }, WHITE);
 
         // Draw drawing circle for reference
         if (mousePos.y > 50)
@@ -196,7 +196,7 @@ int main(void)
 
         if (colorMouseHover >= 0) DrawRectangleRec(colorsRecs[colorMouseHover], Fade(WHITE, 0.6f));
 
-        DrawRectangleLinesEx((Rectangle){ colorsRecs[colorSelected].x - 2, colorsRecs[colorSelected].y - 2,
+        DrawRectangleLinesEx((RectangleRaylib){ colorsRecs[colorSelected].x - 2, colorsRecs[colorSelected].y - 2,
                              colorsRecs[colorSelected].width + 4, colorsRecs[colorSelected].height + 4 }, 2, BLACK);
 
         // Draw save image button

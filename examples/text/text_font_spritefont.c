@@ -5,7 +5,7 @@
 *   NOTE: Sprite fonts should be generated following this conventions:
 *
 *     - Characters must be ordered starting with character 32 (Space)
-*     - Every character must be contained within the same Rectangle height
+*     - Every character must be contained within the same RectangleRaylib height
 *     - Every character and every line must be separated by the same distance (margin/padding)
 *     - Rectangles must be defined by a MAGENTA color background
 *

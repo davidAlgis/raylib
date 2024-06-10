@@ -28,7 +28,7 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "raylib [shapes] example - easings box anim");
 
     // Box variables to be animated with easings
-    Rectangle rec = { GetScreenWidth()/2.0f, -100, 100, 100 };
+    RectangleRaylib rec = { GetScreenWidth()/2.0f, -100, 100, 100 };
     float rotation = 0.0f;
     float alpha = 1.0f;
 
@@ -110,7 +110,7 @@ int main(void)
         // Reset animation at any moment
         if (IsKeyPressed(KEY_SPACE))
         {
-            rec = (Rectangle){ GetScreenWidth()/2.0f, -100, 100, 100 };
+            rec = (RectangleRaylib){ GetScreenWidth()/2.0f, -100, 100, 100 };
             rotation = 0.0f;
             alpha = 1.0f;
             state = 0;

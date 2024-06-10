@@ -63,11 +63,11 @@ int main(void)
 
             // Draw GUI controls
             //------------------------------------------------------------------------------
-            GuiSliderBar((Rectangle){ 600, 40, 120, 20}, "StartAngle", NULL, &startAngle, 0, 720);
-            GuiSliderBar((Rectangle){ 600, 70, 120, 20}, "EndAngle", NULL, &endAngle, 0, 720);
+            GuiSliderBar((RectangleRaylib){ 600, 40, 120, 20}, "StartAngle", NULL, &startAngle, 0, 720);
+            GuiSliderBar((RectangleRaylib){ 600, 70, 120, 20}, "EndAngle", NULL, &endAngle, 0, 720);
 
-            GuiSliderBar((Rectangle){ 600, 140, 120, 20}, "Radius", NULL, &outerRadius, 0, 200);
-            GuiSliderBar((Rectangle){ 600, 170, 120, 20}, "Segments", NULL, &segments, 0, 100);
+            GuiSliderBar((RectangleRaylib){ 600, 140, 120, 20}, "Radius", NULL, &outerRadius, 0, 200);
+            GuiSliderBar((RectangleRaylib){ 600, 170, 120, 20}, "Segments", NULL, &segments, 0, 100);
             //------------------------------------------------------------------------------
 
             minSegments = truncf(ceilf((endAngle - startAngle) / 90));

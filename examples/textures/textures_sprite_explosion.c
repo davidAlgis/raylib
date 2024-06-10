@@ -42,7 +42,7 @@ int main(void)
     int currentFrame = 0;
     int currentLine = 0;
 
-    Rectangle frameRec = { 0, 0, frameWidth, frameHeight };
+    RectangleRaylib frameRec = { 0, 0, frameWidth, frameHeight };
     Vector2 position = { 0.0f, 0.0f };
 
     bool active = false;

@@ -224,15 +224,15 @@ int main(void)
             if (splineTypeEditMode) GuiLock();
             
             // Draw spline config
-            GuiLabel((Rectangle){ 12, 62, 140, 24 }, TextFormat("Spline thickness: %i", (int)splineThickness));
-            GuiSliderBar((Rectangle){ 12, 60 + 24, 140, 16 }, NULL, NULL, &splineThickness, 1.0f, 40.0f);
+            GuiLabel((RectangleRaylib){ 12, 62, 140, 24 }, TextFormat("Spline thickness: %i", (int)splineThickness));
+            GuiSliderBar((RectangleRaylib){ 12, 60 + 24, 140, 16 }, NULL, NULL, &splineThickness, 1.0f, 40.0f);
 
-            GuiCheckBox((Rectangle){ 12, 110, 20, 20 }, "Show point helpers", &splineHelpersActive);
+            GuiCheckBox((RectangleRaylib){ 12, 110, 20, 20 }, "Show point helpers", &splineHelpersActive);
 
             GuiUnlock();
 
-            GuiLabel((Rectangle){ 12, 10, 140, 24 }, "Spline type:");
-            if (GuiDropdownBox((Rectangle){ 12, 8 + 24, 140, 28 }, "LINEAR;BSPLINE;CATMULLROM;BEZIER", &splineTypeActive, splineTypeEditMode)) splineTypeEditMode = !splineTypeEditMode;
+            GuiLabel((RectangleRaylib){ 12, 10, 140, 24 }, "Spline type:");
+            if (GuiDropdownBox((RectangleRaylib){ 12, 8 + 24, 140, 28 }, "LINEAR;BSPLINE;CATMULLROM;BEZIER", &splineTypeActive, splineTypeEditMode)) splineTypeEditMode = !splineTypeEditMode;
 
         EndDrawing();
         //----------------------------------------------------------------------------------

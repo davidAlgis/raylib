@@ -40,7 +40,7 @@ typedef struct LightInfo {
     Vector2 position;           // Light position
     RenderTexture mask;         // Alpha mask for the light
     float outerRadius;          // The distance the light touches
-    Rectangle bounds;           // A cached rectangle of the light bounds to help with culling
+    RectangleRaylib bounds;           // A cached rectangle of the light bounds to help with culling
 
     ShadowGeometry shadows[MAX_SHADOWS];
     int shadowCount;
@@ -137,7 +137,7 @@ void SetupLight(int slot, float x, float y, float radius)
 }
 
 // See if a light needs to update it's mask
-bool UpdateLight(int slot, Rectangle* boxes, int count)
+bool UpdateLight(int slot, RectangleRaylib* boxes, int count)
 {
     if (!lights[slot].active || !lights[slot].dirty) return false;
 
@@ -192,17 +192,17 @@ bool UpdateLight(int slot, Rectangle* boxes, int count)
 }
 
 // Set up some boxes
-void SetupBoxes(Rectangle *boxes, int *count)
+void SetupBoxes(RectangleRaylib *boxes, int *count)
 {
-    boxes[0] = (Rectangle){ 150,80, 40, 40 };
-    boxes[1] = (Rectangle){ 1200, 700, 40, 40 };
-    boxes[2] = (Rectangle){ 200, 600, 40, 40 };
-    boxes[3] = (Rectangle){ 1000, 50, 40, 40 };
-    boxes[4] = (Rectangle){ 500, 350, 40, 40 };
+    boxes[0] = (RectangleRaylib){ 150,80, 40, 40 };
+    boxes[1] = (RectangleRaylib){ 1200, 700, 40, 40 };
+    boxes[2] = (RectangleRaylib){ 200, 600, 40, 40 };
+    boxes[3] = (RectangleRaylib){ 1000, 50, 40, 40 };
+    boxes[4] = (RectangleRaylib){ 500, 350, 40, 40 };
 
     for (int i = 5; i < MAX_BOXES; i++)
     {
-        boxes[i] = (Rectangle){(float)GetRandomValue(0,GetScreenWidth()), (float)GetRandomValue(0,GetScreenHeight()), (float)GetRandomValue(10,100), (float)GetRandomValue(10,100) };
+        boxes[i] = (RectangleRaylib){(float)GetRandomValue(0,GetScreenWidth()), (float)GetRandomValue(0,GetScreenHeight()), (float)GetRandomValue(10,100), (float)GetRandomValue(10,100) };
     }
 
     *count = MAX_BOXES;
@@ -222,7 +222,7 @@ int main(void)
 
     // Initialize our 'world' of boxes
     int boxCount = 0;
-    Rectangle boxes[MAX_BOXES] = { 0 };
+    RectangleRaylib boxes[MAX_BOXES] = { 0 };
     SetupBoxes(boxes, &boxCount);
 
     // Create a checkerboard ground texture
@@ -282,7 +282,7 @@ int main(void)
                 // Merge in all the light masks
                 for (int i = 0; i < MAX_LIGHTS; i++)
                 {
-                    if (lights[i].active) DrawTextureRec(lights[i].mask.texture, (Rectangle){ 0, 0, (float)GetScreenWidth(), -(float)GetScreenHeight() }, Vector2Zero(), WHITE);
+                    if (lights[i].active) DrawTextureRec(lights[i].mask.texture, (RectangleRaylib){ 0, 0, (float)GetScreenWidth(), -(float)GetScreenHeight() }, Vector2Zero(), WHITE);
                 }
 
                 rlDrawRenderBatchActive();
@@ -300,10 +300,10 @@ int main(void)
             ClearBackground(BLACK);
             
             // Draw the tile background
-            DrawTextureRec(backgroundTexture, (Rectangle){ 0, 0, (float)GetScreenWidth(), (float)GetScreenHeight() }, Vector2Zero(), WHITE);
+            DrawTextureRec(backgroundTexture, (RectangleRaylib){ 0, 0, (float)GetScreenWidth(), (float)GetScreenHeight() }, Vector2Zero(), WHITE);
             
             // Overlay the shadows from all the lights
-            DrawTextureRec(lightMask.texture, (Rectangle){ 0, 0, (float)GetScreenWidth(), -(float)GetScreenHeight() }, Vector2Zero(), ColorAlpha(WHITE, showLines? 0.75f : 1.0f));
+            DrawTextureRec(lightMask.texture, (RectangleRaylib){ 0, 0, (float)GetScreenWidth(), -(float)GetScreenHeight() }, Vector2Zero(), ColorAlpha(WHITE, showLines? 0.75f : 1.0f));
 
             // Draw the lights
             for (int i = 0; i < MAX_LIGHTS; i++)

@@ -1,6 +1,6 @@
 /*******************************************************************************************
 *
-*   raylib [text] example - Rectangle bounds
+*   raylib [text] example - RectangleRaylib bounds
 *
 *   Example originally created with raylib 2.5, last time updated with raylib 4.0
 *
@@ -15,8 +15,8 @@
 
 #include "raylib.h"
 
-static void DrawTextBoxed(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint);   // Draw text using font inside rectangle limits
-static void DrawTextBoxedSelectable(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, Color selectTint, Color selectBackTint);    // Draw text using font inside rectangle limits with support for text selection
+static void DrawTextBoxed(Font font, const char *text, RectangleRaylib rec, float fontSize, float spacing, bool wordWrap, Color tint);   // Draw text using font inside rectangle limits
+static void DrawTextBoxedSelectable(Font font, const char *text, RectangleRaylib rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, Color selectTint, Color selectBackTint);    // Draw text using font inside rectangle limits with support for text selection
 
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -37,8 +37,8 @@ tempor incididunt ut labore et dolore magna aliqua. Nec ullamcorper sit amet ris
     bool resizing = false;
     bool wordWrap = true;
 
-    Rectangle container = { 25.0f, 25.0f, screenWidth - 50.0f, screenHeight - 250.0f };
-    Rectangle resizer = { container.x + container.width - 17, container.y + container.height - 17, 14, 14 };
+    RectangleRaylib container = { 25.0f, 25.0f, screenWidth - 50.0f, screenHeight - 250.0f };
+    RectangleRaylib resizer = { container.x + container.width - 17, container.y + container.height - 17, 14, 14 };
 
     // Minimum width and heigh for the container rectangle
     const float minWidth = 60;
@@ -99,13 +99,13 @@ tempor incididunt ut labore et dolore magna aliqua. Nec ullamcorper sit amet ris
             DrawRectangleLinesEx(container, 3, borderColor);    // Draw container border
 
             // Draw text in container (add some padding)
-            DrawTextBoxed(font, text, (Rectangle){ container.x + 4, container.y + 4, container.width - 4, container.height - 4 }, 20.0f, 2.0f, wordWrap, GRAY);
+            DrawTextBoxed(font, text, (RectangleRaylib){ container.x + 4, container.y + 4, container.width - 4, container.height - 4 }, 20.0f, 2.0f, wordWrap, GRAY);
 
             DrawRectangleRec(resizer, borderColor);             // Draw the resize box
 
             // Draw bottom info
             DrawRectangle(0, screenHeight - 54, screenWidth, 54, GRAY);
-            DrawRectangleRec((Rectangle){ 382.0f, screenHeight - 34.0f, 12.0f, 12.0f }, MAROON);
+            DrawRectangleRec((RectangleRaylib){ 382.0f, screenHeight - 34.0f, 12.0f, 12.0f }, MAROON);
 
             DrawText("Word Wrap: ", 313, screenHeight-115, 20, BLACK);
             if (wordWrap) DrawText("ON", 447, screenHeight - 115, 20, RED);
@@ -132,13 +132,13 @@ tempor incididunt ut labore et dolore magna aliqua. Nec ullamcorper sit amet ris
 //--------------------------------------------------------------------------------------
 
 // Draw text using font inside rectangle limits
-static void DrawTextBoxed(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint)
+static void DrawTextBoxed(Font font, const char *text, RectangleRaylib rec, float fontSize, float spacing, bool wordWrap, Color tint)
 {
     DrawTextBoxedSelectable(font, text, rec, fontSize, spacing, wordWrap, tint, 0, 0, WHITE, WHITE);
 }
 
 // Draw text using font inside rectangle limits with support for text selection
-static void DrawTextBoxedSelectable(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, Color selectTint, Color selectBackTint)
+static void DrawTextBoxedSelectable(Font font, const char *text, RectangleRaylib rec, float fontSize, float spacing, bool wordWrap, Color tint, int selectStart, int selectLength, Color selectTint, Color selectBackTint)
 {
     int length = TextLength(text);  // Total length in bytes of the text, scanned by codepoints in loop
 
@@ -238,7 +238,7 @@ static void DrawTextBoxedSelectable(Font font, const char *text, Rectangle rec, 
                 bool isGlyphSelected = false;
                 if ((selectStart >= 0) && (k >= selectStart) && (k < (selectStart + selectLength)))
                 {
-                    DrawRectangleRec((Rectangle){ rec.x + textOffsetX - 1, rec.y + textOffsetY, glyphWidth, (float)font.baseSize*scaleFactor }, selectBackTint);
+                    DrawRectangleRec((RectangleRaylib){ rec.x + textOffsetX - 1, rec.y + textOffsetY, glyphWidth, (float)font.baseSize*scaleFactor }, selectBackTint);
                     isGlyphSelected = true;
                 }
 
